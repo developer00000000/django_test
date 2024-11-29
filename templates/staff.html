@@ -1,0 +1,50 @@
+{% extends 'layouts/base.html'%}
+
+{% block content%}
+<div class="row">
+   <h1>STAFF</h1>
+   <div class="col-6 offset-3">
+      <div class="card mb-3" style="max-width: 540px;">
+         <div class="row g-0">
+           <div class="col-md-4 d-flex justify-content-center align-items-center">
+             <img src="{{staff.photo.url}}" class="img-fluid rounded-start" alt="{{staff}}">
+           </div>
+           <div class="col-md-8">
+             <div class="card-body">
+               <h5 class="card-title">{{staff}}</h5>
+               <ol class="list-group list-group-numbered">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Phone number</div>
+                     {{staff.phone_number}}
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Email</div>
+                      {{staff.email}}
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Birhday</div>
+                      {{staff.birth_day|date:"d-F Y"}}
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                     <div class="ms-2 me-auto">
+                       <div class="fw-bold">Address</div>
+                       {{staff.address|default:" mavjud emas"}}
+                     </div>
+                   </li>
+                  
+                </ol>
+
+                Lasts updated {{staff.updated_at|timesince}}  ago
+             </div> 
+           </div>
+         </div>
+       </div>
+   </div>
+</div>
+{% endblock%}

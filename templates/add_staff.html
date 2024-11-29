@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-8 offset-5"></div>
+    <div class="card">
+        <div class="card-header">Add new staff</div>
+        <div class="card-body">
+            <form action="">
+                {{ form|crispy }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
